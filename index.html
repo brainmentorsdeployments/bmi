@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Gauge Meter</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="bmi-container">
+        <h1>BMI Gauge Meter</h1>
+        
+        <div class="bmi-inputs">
+            <label for="height">Height (cm):</label>
+            <input type="number" id="height" placeholder="Enter height" required>
+
+            <label for="weight">Weight (kg):</label>
+            <input type="number" id="weight" placeholder="Enter weight" required>
+        </div>
+
+        <button id="calculate-btn">Calculate BMI</button>
+
+        <div class="gauge-meter">
+            <svg id="gauge" width="200" height="120" viewBox="0 0 200 120">
+                <!-- Semi-circular gauge arc -->
+                <path id="gauge-fill" d="M 20 100 A 80 80 0 0 1 180 100" stroke-width="10" fill="none" stroke="#ddd"></path>
+                
+                <!-- Needle starting from the center bottom (100, 100) -->
+                <line id="needle" x1="100" y1="100" x2="100" y2="30" stroke="black" stroke-width="5" transform="rotate(0 100 100)" />
+            </svg>
+        </div>
+
+        <p id="bmi-result">Your BMI: <span id="bmi-value">0</span></p>
+        <p id="bmi-category">Category: <span id="category">Unknown</span></p>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
